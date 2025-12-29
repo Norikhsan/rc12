@@ -3,44 +3,26 @@ LOCAL_PATH := device/xiaomi/blossom
 # Configure emulated_storage.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# API
-PRODUCT_SHIPPING_API_LEVEL := 29
-
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# Crypto
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.crypto.volume.filenames_mode=aes-256-cts
-
-# Kernel
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/Image.gz:kernel
 
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-service-recovery \
-    android.hardware.gatekeeper@1.0-impl-recovery
-
-PRODUCT_PACKAGES += \
-    libshim_beanpod
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.hardware.gatekeeper=beanpod
-
-# Keymaster
+# Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
-    libpuresoftkeymasterdevice
+    libpuresoftkeymasterdevice \
+    ashmemd_aidl_interface-cpp \
+    libashmemd_client
 
-RECOVERY_LIBRARY_SOURCE_FILES += \
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 
 # libion & libxml2
 TARGET_RECOVERY_DEVICE_MODULES += \
