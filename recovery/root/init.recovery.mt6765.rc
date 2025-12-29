@@ -46,6 +46,10 @@ service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
     disabled
     seclabel u:r:recovery:s0
 
+on property:crypto.ready=1
+    start hal_cryptoeng_oppo
+    start keymaster-4-0
+
 on property:hwservicemanager.ready=true
     start hal_cryptoeng_oppo
     start mobicore
@@ -69,3 +73,6 @@ on property:twrp.decrypt.done=true
     stop mobicore
     stop keymaster-4-0
     stop gatekeeper-1-0
+
+on boot
+    start health-hal-2-1
