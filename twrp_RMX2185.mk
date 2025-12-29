@@ -32,6 +32,6 @@ $(call inherit-product, device/realme/RMX2185/device.mk)
 PRODUCT_DEVICE := RMX2185
 PRODUCT_NAME := twrp_RMX2185
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := RMX2185
+PRODUCT_MODEL := RM6765-G35
 PRODUCT_MANUFACTURER := realme
 
