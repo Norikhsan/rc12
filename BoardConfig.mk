@@ -133,7 +133,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 ifneq ($(OF_HIDE_NOTCH),1)
   # Configure Status bar icons for regular TWRP builds only
-    TW_DEVICE_VERSION := RM6765-G35
+    TW_DEVICE_VERSION := RM6765-G35 Tapin™
     TW_STATUS_ICONS_ALIGN := center
     TW_CUSTOM_CPU_POS := 50
     TW_CUSTOM_CLOCK_POS := 300
@@ -178,7 +178,6 @@ TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_APEX := true
 TW_USE_TOOLBOX := true
 TW_NO_SCREEN_BLANK := true
-TW_SCREEN_BLANK_ON_BOOT := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 
