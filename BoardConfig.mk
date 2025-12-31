@@ -193,3 +193,41 @@ TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# SHRP flags
+# maintainer
+SHRP_MAINTAINER := "Tapin Recovery Instraller"
+
+# device
+SHRP_DEVICE_CODE := RMX2185
+SHRP_PATH := device/realme/RMX2185
+SHRP_REC_TYPE := Normal
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_DEVICE_TYPE := A_Only
+
+# mount points
+SHRP_INTERNAL := /sdcard
+SHRP_EXTERNAL := /sdcard1
+SHRP_OTG := /usb_otg
+
+# theming
+SHRP_DARK := true
+
+# "SHRP Express"
+SHRP_EXPRESS := true
+SHRP_EXPRESS_USE_DATA := true
+
+# status bar padding
+SHRP_STATUSBAR_RIGHT_PADDING := 25
+SHRP_STATUSBAR_LEFT_PADDING := 25
+
+# skip all addons
+SHRP_SKIP_DEFAULT_ADDON_1 := true
+SHRP_SKIP_DEFAULT_ADDON_2 := true
+SHRP_SKIP_DEFAULT_ADDON_3 := true
+SHRP_SKIP_DEFAULT_ADDON_4 := true
+SHRP_EXCLUDE_MAGISK_FLASH := true
+
+# flashlight
+SHRP_FLASH := 0
+SHRP_CUSTOM_FLASHLIGHT := false
